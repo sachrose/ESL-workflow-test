@@ -1,7 +1,9 @@
-OBJS	= biba.o boba.o
+OBJS = biba.o boba.o
+
+all: hoba
 
 hoba: $(OBJS)
-	gcc -o hoba $(OBJS)
+	gcc -o $@ $^
 
 biba.o: biba.c biba.h
 	gcc -c biba.c
@@ -10,6 +12,6 @@ boba.o: boba.c biba.h
 	gcc -c boba.c
 
 clean :
-	rm -f hoba $(OBJS)
+	rm -f $(OBJS) hoba
 
 .PHONY: clean
